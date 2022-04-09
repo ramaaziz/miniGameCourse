@@ -4,15 +4,19 @@ import PrimaryButton from "../components/PrimaryButton";
 function StartGame() {
   return (
     <View style={styles.inputContainer}>
-      <TextInput
-        style={styles.textInput}
-        maxLength={2}
-        keyboardType="number-pad"
-        autoCapitalize="none"
-        autoCorrect={false}
-      />
-      <PrimaryButton>Reset</PrimaryButton>
-      <PrimaryButton>Confirm</PrimaryButton>
+      <View>
+        <TextInput
+          style={styles.textInput}
+          maxLength={2}
+          keyboardType="number-pad"
+          autoCapitalize="none"
+          autoCorrect={false}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <PrimaryButton style={styles.button}>Reset</PrimaryButton>
+        <PrimaryButton style={styles.button}>Confirm</PrimaryButton>
+      </View>
     </View>
   );
 }
@@ -25,8 +29,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 24,
     borderRadius: 8,
     padding: 16,
-    backgroundColor: "#4e0329",
+    backgroundColor: "#3b021f",
     elevation: 10,
+    flexDirection: "column",
+    alignItems: "center",
   },
   textInput: {
     height: 50,
@@ -38,5 +44,9 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     fontWeight: "bold",
     textAlign: "center",
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    marginVertical: 10,
   },
 });
